@@ -23,6 +23,13 @@
 - Search and filter
 - Admin moderation
 
+## Search and Filter Behavior
+- Default status filter on home is `active` (Live Auctions).
+- Users can switch status to `active`, `pending`, or `closed` from the header control (left of search).
+- Search must run against the currently selected status (not always `active`).
+- Category links should preserve the selected status filter.
+- Home section title should reflect the selected status (`Live Auctions`, `Pending`, `Closed`).
+
 ## UI/UX
 - Clean, easy-to-scan UI (not strictly Amazon design)
 - Include: Header, Footer, Product grid cards

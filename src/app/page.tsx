@@ -19,17 +19,35 @@ export default async function Home({
 }) {
   noStore();
   const params = await searchParams;
+  const selectedStatus =
+    params.status === "pending" || params.status === "closed"
+      ? params.status
+      : "active";
   const locale = await getLocale();
   const auctions = await getAuctions({
     query: params.query,
     category: params.category,
-    status: params.status ?? "active",
+    status: selectedStatus,
   });
   const featured = await getFeaturedAuction();
+  const statusQuery = (status: "active" | "pending" | "closed") => {
+    const query = new URLSearchParams({ status });
+    if (params.query) {
+      query.set("query", params.query);
+    }
+    if (params.category) {
+      query.set("category", params.category);
+    }
+    return `/?${query.toString()}`;
+  };
 
   return (
     <div className={styles.page}>
-      <Header />
+      <Header
+        currentQuery={params.query}
+        currentCategory={params.category}
+        currentStatus={selectedStatus}
+      />
       <main className={`container ${styles.main}`}>
         <section className={styles.hero}>
           <div>
@@ -69,13 +87,17 @@ export default async function Home({
 
         <section className={styles.sectionHeader}>
           <div>
-            <h2>{t(locale, "section.liveAuctions")}</h2>
+            <h2>
+              {selectedStatus === "active"
+                ? t(locale, "section.liveAuctions")
+                : t(locale, `section.filters.${selectedStatus}`)}
+            </h2>
             <p className="muted">{t(locale, "section.liveAuctionsHelp")}</p>
           </div>
           <div className={styles.filters}>
-            <a href="/?status=active">{t(locale, "section.filters.active")}</a>
-            <a href="/?status=pending">{t(locale, "section.filters.pending")}</a>
-            <a href="/?status=closed">{t(locale, "section.filters.closed")}</a>
+            <a href={statusQuery("active")}>{t(locale, "section.filters.active")}</a>
+            <a href={statusQuery("pending")}>{t(locale, "section.filters.pending")}</a>
+            <a href={statusQuery("closed")}>{t(locale, "section.filters.closed")}</a>
           </div>
         </section>
 

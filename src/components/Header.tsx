@@ -6,10 +6,32 @@ import SignOutButton from "./SignOutButton";
 import LanguageToggle from "./LanguageToggle";
 import { getLocale, t } from "@/lib/i18n";
 
-export default async function Header() {
+type HeaderProps = {
+  currentQuery?: string;
+  currentCategory?: string;
+  currentStatus?: string;
+};
+
+export default async function Header({
+  currentQuery,
+  currentCategory,
+  currentStatus,
+}: HeaderProps) {
   noStore();
   const user = await getSessionUser();
   const locale = await getLocale();
+  const selectedStatus =
+    currentStatus === "pending" || currentStatus === "closed"
+      ? currentStatus
+      : "active";
+  const statusFilters = [
+    { value: "active", label: t(locale, "section.filters.active") },
+    { value: "pending", label: t(locale, "section.filters.pending") },
+    { value: "closed", label: t(locale, "section.filters.closed") },
+  ];
+  const categoryHref = (category: string) =>
+    `/?${new URLSearchParams({ category, status: selectedStatus }).toString()}`;
+
   return (
     <header className={styles.header}>
       <div className={`container ${styles.headerInner}`}>
@@ -17,12 +39,31 @@ export default async function Header() {
           <Link href="/" className={styles.logo}>
             Auction House
           </Link>
-          <span className="pill">{t(locale, "section.liveAuctions")}</span>
+          <div className={styles.statusTabs}>
+            {statusFilters.map((statusFilter) => (
+              <Link
+                key={statusFilter.value}
+                href={`/?status=${statusFilter.value}`}
+                className={
+                  selectedStatus === statusFilter.value
+                    ? styles.statusTabActive
+                    : styles.statusTab
+                }
+              >
+                {statusFilter.label}
+              </Link>
+            ))}
+          </div>
         </div>
 
         <form action="/" className={styles.search}>
+          <input type="hidden" name="status" value={selectedStatus} />
+          {currentCategory ? (
+            <input type="hidden" name="category" value={currentCategory} />
+          ) : null}
           <input
             name="query"
+            defaultValue={currentQuery ?? ""}
             placeholder={t(locale, "search.placeholder")}
           />
           <button type="submit">{t(locale, "actions.search")}</button>
@@ -47,14 +88,14 @@ export default async function Header() {
       <div className={styles.navStrip}>
         <div className={`container ${styles.navInner}`}>
           <div className={styles.navLinks}>
-            <Link href="/?category=Collectibles">
+            <Link href={categoryHref("Collectibles")}>
               {t(locale, "nav.collectibles")}
             </Link>
-            <Link href="/?category=Design">{t(locale, "nav.design")}</Link>
-            <Link href="/?category=Tech">{t(locale, "nav.tech")}</Link>
-            <Link href="/?category=Art">{t(locale, "nav.art")}</Link>
-            <Link href="/?category=Home">{t(locale, "nav.home")}</Link>
-            <Link href="/?category=Hobby">{t(locale, "nav.hobby")}</Link>
+            <Link href={categoryHref("Design")}>{t(locale, "nav.design")}</Link>
+            <Link href={categoryHref("Tech")}>{t(locale, "nav.tech")}</Link>
+            <Link href={categoryHref("Art")}>{t(locale, "nav.art")}</Link>
+            <Link href={categoryHref("Home")}>{t(locale, "nav.home")}</Link>
+            <Link href={categoryHref("Hobby")}>{t(locale, "nav.hobby")}</Link>
           </div>
           <div className={styles.navUser}>
             <LanguageToggle locale={locale} />

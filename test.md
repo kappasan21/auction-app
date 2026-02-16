@@ -21,6 +21,10 @@
 
 ### E2E
 - Home page renders Live auctions section and product cards.
+- Switching header status to `Pending` shows pending auctions.
+- Switching header status to `Closed` shows closed auctions.
+- Search respects selected status (active/pending/closed).
+- Category click preserves selected status.
 
 ## How To Run
 - `npm run test:unit`
@@ -31,8 +35,8 @@
 - For E2E, ensure sample data exists: `npm run db:seed`
 
 ## Results
-- Unit: Passed (3 tests)
-- Integration: Passed (1 test)
-- E2E: Passed (1 test)
+- Unit: Passed (3 tests) via `npm run test:unit` on 2026-02-16
+- Integration: Last known passed (1 test) on 2026-02-10
+- E2E: Last known passed (1 test) on 2026-02-10
 
-Last run: 2026-02-10
+Last run: 2026-02-16 (unit)

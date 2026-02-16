@@ -11,6 +11,10 @@
 - [x] Create auction flow
 - [x] Image upload for auctions
 - [x] Search and filter
+- [x] Header status switcher (`active` / `pending` / `closed`) next to search
+- [x] Keep selected status when submitting search
+- [x] Keep selected status when clicking category filters
+- [x] Update home section heading based on selected status
 - [x] Admin moderation basics
 - [x] Basic validation and error handling
 - [x] Responsive UI polish
