@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auction House Mockup - Neon Circuit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monument+Extended:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: "Monument Extended";
+      font-style: normal;
+      font-weight: 700;
+      src: local("Monument Extended");
+    }
+    :root {
+      --bg: #07070a;
+      --panel: #10111a;
+      --card: #121426;
+      --ink: #f7f7ff;
+      --muted: #9aa2c0;
+      --accent: #7cffc4;
+      --accent2: #7f5bff;
+      --accent3: #ff5bd1;
+      --glow: 0 0 30px rgba(124, 255, 196, 0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Rubik, system-ui, sans-serif;
+      background: radial-gradient(circle at top, #14162a, var(--bg));
+      color: var(--ink);
+    }
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 28px 24px 90px; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      border: 1px solid #1a1d33; padding: 16px 20px; border-radius: 14px;
+      background: rgba(16, 17, 26, 0.7); backdrop-filter: blur(12px);
+    }
+    .logo { font-family: "Monument Extended", Rubik, sans-serif; font-size: 20px; letter-spacing: 0.2em; }
+    .cta { background: linear-gradient(90deg, var(--accent2), var(--accent3)); padding: 10px 18px; border-radius: 999px; font-weight: 600; }
+    .hero {
+      margin-top: 26px;
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px;
+    }
+    .hero-card {
+      padding: 24px; border-radius: 20px;
+      background: linear-gradient(135deg, rgba(127, 91, 255, 0.2), rgba(255, 91, 209, 0.1));
+      border: 1px solid rgba(127, 91, 255, 0.4);
+      box-shadow: var(--glow);
+    }
+    .hero h1 {
+      font-family: "Monument Extended", Rubik, sans-serif;
+      font-size: 42px; line-height: 1.1; text-transform: uppercase;
+    }
+    .hero p { color: var(--muted); margin-top: 12px; }
+    .featured {
+      background: var(--card); border-radius: 20px; overflow: hidden; border: 1px solid #202446;
+    }
+    .featured img { width: 100%; height: 240px; object-fit: cover; }
+    .featured .body { padding: 18px; }
+    .pill {
+      display: inline-flex; gap: 8px; align-items: center; padding: 6px 12px;
+      border-radius: 999px; background: rgba(124, 255, 196, 0.12); color: var(--accent);
+      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .section { margin-top: 36px; display: flex; justify-content: space-between; align-items: center; }
+    .grid {
+      margin-top: 20px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;
+    }
+    .card {
+      background: var(--panel); border: 1px solid #202446; border-radius: 18px; overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(0,0,0,0.5); }
+    .card img { width: 100%; height: 180px; object-fit: cover; }
+    .card .body { padding: 14px; display: grid; gap: 6px; }
+    .price { color: var(--accent); font-weight: 600; }
+    .meta { color: var(--muted); font-size: 12px; }
+    @media (max-width: 960px) { .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">AUCTION HOUSE</div>
+      <div class="meta">Live ・ 128 auctions ・ 2.4k bids today</div>
+      <div class="cta">Create Auction</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <span class="pill">Neon Drop</span>
+        <h1>Bid faster. Win louder.</h1>
+        <p>High-energy marketplace for tech, collectibles, and rare parts. Built for speed.</p>
+      </div>
+      <div class="featured">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop" alt="" />
+        <div class="body">
+          <strong>Precision Turbo Housing</strong>
+          <div class="price">$580.00 ・ 12 bids ・ 4h left</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section">
+      <div>
+        <h2>Ending Soon</h2>
+        <div class="meta">Fast-moving listings with live bidding activity.</div>
+      </div>
+      <span class="pill">LIVE</span>
+    </div>
+
+    <section class="grid">
+      <article class="card"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop" alt="" /><div class="body"><strong>Modular IoT Sensor Pack</strong><div class="price">$210</div><div class="meta">Tech ・ 5 bids</div></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1000&auto=format&fit=crop" alt="" /><div class="body"><strong>Brushless Drift RC Kit</strong><div class="price">$190</div><div class="meta">RC Cars ・ 8 bids</div></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1000&auto=format&fit=crop" alt="" /><div class="body"><strong>Performance Brake Calipers</strong><div class="price">$340</div><div class="meta">Car Parts ・ 3 bids</div></div></article>
+    </section>
+  </div>
+</body>
+</html>

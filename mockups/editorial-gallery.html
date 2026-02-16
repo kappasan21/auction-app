@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auction House Mockup - Editorial Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f2eb;
+      --ink: #1a1a1a;
+      --muted: #6b655f;
+      --accent: #c14b2d;
+      --card: #ffffff;
+      --shadow: 0 20px 50px rgba(20, 18, 16, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(circle at top, #fffaf3, var(--bg));
+      color: var(--ink);
+    }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 40px 24px 80px; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .logo { font-family: "DM Serif Display", serif; font-size: 28px; letter-spacing: 0.02em; }
+    nav a { margin-right: 18px; color: var(--muted); text-decoration: none; }
+    .hero { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 28px; }
+    .hero h1 { font-family: "DM Serif Display", serif; font-size: 52px; line-height: 1.05; }
+    .hero p { color: var(--muted); margin-top: 12px; }
+    .hero-card { background: var(--card); border-radius: 24px; box-shadow: var(--shadow); overflow: hidden; }
+    .hero-card img { width: 100%; height: 220px; object-fit: cover; }
+    .hero-card .body { padding: 20px; }
+    .section { margin-top: 50px; display: flex; justify-content: space-between; align-items: end; }
+    .grid { margin-top: 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .card { background: var(--card); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
+    .card img { width: 100%; height: 180px; object-fit: cover; }
+    .card .body { padding: 16px; }
+    .pill { display: inline-flex; padding: 6px 12px; background: #f2e7dc; color: var(--accent); border-radius: 999px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">Auction House</div>
+      <nav>
+        <a href="#">Collectibles</a>
+        <a href="#">Design</a>
+        <a href="#">Tech</a>
+        <a href="#">Art</a>
+        <a href="#">Home</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="pill">Curated Drop</span>
+        <h1>Objects with provenance, bid in minutes.</h1>
+        <p>Gallery-like layout, slow luxury, deep focus on the story behind each item.</p>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop" alt="Featured" />
+        <div class="body">
+          <strong>Studio Desk Lamp, 1960</strong>
+          <div style="color: var(--muted); margin-top: 6px;">Current bid $320 ・ Ends in 6h</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section">
+      <div>
+        <h2>Live Auctions</h2>
+        <div style="color: var(--muted);">A calm grid with generous whitespace.</div>
+      </div>
+      <div class="pill">Ending Soon</div>
+    </div>
+
+    <section class="grid">
+      <article class="card"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1000&auto=format&fit=crop" alt="" /><div class="body"><strong>Vintage Hi-Fi Receiver</strong><div style="color: var(--muted)">Electronics ・ $240</div></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1000&auto=format&fit=crop" alt="" /><div class="body"><strong>Modernist Ceramic Pitcher</strong><div style="color: var(--muted)">Design ・ $180</div></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?q=80&w=1000&auto=format&fit=crop" alt="" /><div class="body"><strong>Studio Reference Headphones</strong><div style="color: var(--muted)">Tech ・ $310</div></div></article>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+.shell {
+  padding: 48px 0;
+}
+
+.card {
+  background: var(--surface-2);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  display: grid;
+  gap: 20px;
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.row {
+  display: grid;
+  gap: 8px;
+}
+
+.row label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+}
+
+.row input,
+.row textarea,
+.row select {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  background: var(--surface-3);
+  color: var(--ink-1);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.primary {
+  border: none;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent-3));
+  color: var(--ink-1);
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--ink-1);
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.note {
+  font-size: 14px;
+  color: var(--ink-3);
+}
+
+.alert {
+  padding: 12px 16px;
+  background: rgba(255, 91, 209, 0.12);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 91, 209, 0.6);
+  color: #ffb0e3;
+  font-weight: 600;
+}
+
+.fieldError {
+  color: #ff7bce;
+  font-size: 13px;
+  font-weight: 600;
+}

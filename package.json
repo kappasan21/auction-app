@@ -1,0 +1,43 @@
+{
+  "name": "auction-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3901",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:seed": "tsx scripts/seed.ts",
+    "test": "vitest",
+    "test:unit": "vitest run --dir src --exclude **/*.integration.test.ts",
+    "test:integration": "vitest run src/lib/queries.integration.test.ts",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.15.6",
+    "bcryptjs": "^2.4.3",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "@playwright/test": "^1.51.0",
+    "dotenv": "^16.6.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "jsdom": "^26.1.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5",
+    "vite-tsconfig-paths": "^5.1.2",
+    "vitest": "^2.1.9"
+  }
+}

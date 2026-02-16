@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auction House Mockup - Warm Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fff7f1;
+      --ink: #2b1d1a;
+      --muted: #7c6760;
+      --accent: #ff7a59;
+      --card: #ffffff;
+      --shadow: 0 18px 40px rgba(40, 22, 18, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Nunito, sans-serif; background: var(--bg); color: var(--ink); }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 30px 24px 80px; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+    .logo { font-family: Fraunces, serif; font-size: 28px; }
+    .hero { background: linear-gradient(135deg, #ffe2d6, #fff7f1); border-radius: 24px; padding: 28px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; }
+    .hero h1 { font-family: Fraunces, serif; font-size: 44px; line-height: 1.1; }
+    .cta { background: var(--accent); color: white; padding: 10px 16px; border-radius: 999px; display: inline-block; margin-top: 12px; }
+    .tabs { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .tab { padding: 8px 14px; border-radius: 999px; background: #fff; border: 1px solid #f2d9cf; }
+    .grid { margin-top: 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .card { background: var(--card); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
+    .card img { width: 100%; height: 190px; object-fit: cover; }
+    .card .body { padding: 16px; }
+    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">Auction House</div>
+      <div>Hi, guest</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Find your next favorite hobby piece.</h1>
+        <p style="color: var(--muted); margin-top: 10px;">Warm, friendly layout with rounded cards and soft gradients.</p>
+        <span class="cta">Explore live auctions</span>
+      </div>
+      <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1200&auto=format&fit=crop" alt="" style="width:100%; border-radius: 16px;" />
+    </section>
+
+    <div class="tabs">
+      <div class="tab">Collectibles</div>
+      <div class="tab">Design</div>
+      <div class="tab">Hobby</div>
+      <div class="tab">Tech</div>
+      <div class="tab">Home</div>
+    </div>
+
+    <section class="grid">
+      <article class="card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1000&auto=format&fit=crop" alt="" /><div class="body"><strong>Custom Shift Knob</strong><div style="color: var(--muted)">Car Parts ÅE $120</div></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1000&auto=format&fit=crop" alt="" /><div class="body"><strong>RC Desert Racer</strong><div style="color: var(--muted)">RC Cars ÅE $180</div></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1000&auto=format&fit=crop" alt="" /><div class="body"><strong>Studio Desk Lamp</strong><div style="color: var(--muted)">Design ÅE $320</div></div></article>
+    </section>
+  </div>
+</body>
+</html>
