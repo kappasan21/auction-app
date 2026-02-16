@@ -19,4 +19,8 @@
 - [x] Basic validation and error handling
 - [x] Responsive UI polish
 - [x] Seed data (optional)
-- [ ] Smoke test main flows
+- [x] Fix TypeScript build blockers (`bcryptjs` declarations, nullable session-user narrowing)
+- [x] Align Playwright base URL/webServer port with app dev port (3901)
+- [x] Add E2E coverage for status switcher + status-preserving search/category flows
+- [x] Enforce documentation + validation gate for every code update
+- [x] Smoke test main flows

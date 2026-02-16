@@ -38,3 +38,11 @@
 ## Non-Functional
 - Clear navigation and readable layout
 - Mobile-responsive layout
+
+## Change Control and Quality Gate
+- Any app code update must also update `requirements.md`, `task-list.md`, and `test.md` in the same change.
+- `test.md` results can be updated only after running real checks for the updated code:
+  - `npm run build`
+  - `npm run test:unit`
+  - `npm run test:integration`
+  - `npm run test:e2e`

@@ -34,9 +34,17 @@
 ### Preconditions
 - For E2E, ensure sample data exists: `npm run db:seed`
 
-## Results
-- Unit: Passed (3 tests) via `npm run test:unit` on 2026-02-16
-- Integration: Last known passed (1 test) on 2026-02-10
-- E2E: Last known passed (1 test) on 2026-02-10
+### Documentation Gate
+- Update `test.md` results only after re-running:
+  - `npm run build`
+  - `npm run test:unit`
+  - `npm run test:integration`
+  - `npm run test:e2e`
 
-Last run: 2026-02-16 (unit)
+## Results
+- Build: Passed via `npm run build` on 2026-02-16
+- Unit: Passed (3 tests) via `npm run test:unit` on 2026-02-16
+- Integration: Passed (1 test) via `npm run test:integration` on 2026-02-16
+- E2E: Passed (5 tests) via `npm run test:e2e` on 2026-02-16
+
+Last run: 2026-02-16 (build + unit + integration + e2e)

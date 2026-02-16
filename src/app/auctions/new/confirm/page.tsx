@@ -27,7 +27,8 @@ export default async function ConfirmAuctionPage({
   if (!draftId) {
     redirect("/auctions/new");
   }
-  const draft = await getAuctionDraft(draftId, user.id);
+  const ensuredDraftId = draftId;
+  const draft = await getAuctionDraft(ensuredDraftId, user.id);
   if (!draft) {
     redirect("/auctions/new?error=Draft%20not%20found");
   }
@@ -38,7 +39,7 @@ export default async function ConfirmAuctionPage({
     if (!sessionUser) {
       redirect("/login");
     }
-    const currentDraft = await getAuctionDraft(draftId, sessionUser.id);
+    const currentDraft = await getAuctionDraft(ensuredDraftId, sessionUser.id);
     if (!currentDraft) {
       redirect("/auctions/new?error=Draft%20not%20found");
     }
@@ -52,7 +53,7 @@ export default async function ConfirmAuctionPage({
       startsAt: currentDraft.startsAt,
       endAt: currentDraft.endAt,
     });
-    await deleteAuctionDraft(draftId, sessionUser.id);
+    await deleteAuctionDraft(ensuredDraftId, sessionUser.id);
     redirect("/?status=pending");
   }
 
@@ -60,7 +61,7 @@ export default async function ConfirmAuctionPage({
     "use server";
     const sessionUser = await getSessionUser();
     if (sessionUser) {
-      await deleteAuctionDraft(draftId, sessionUser.id);
+      await deleteAuctionDraft(ensuredDraftId, sessionUser.id);
     }
     redirect("/auctions/new");
   }

@@ -21,6 +21,7 @@ export default async function NewAuctionPage({
   if (!user) {
     redirect("/login");
   }
+  const userId = user.id;
   const params = await searchParams;
   const fieldErrors = params.error
     ? (() => {
@@ -71,7 +72,7 @@ export default async function NewAuctionPage({
     }
 
     const draftId = await createAuctionDraft({
-      sellerId: user.id,
+      sellerId: userId,
       title: parsed.data.title,
       description: parsed.data.description,
       category: parsed.data.category,
