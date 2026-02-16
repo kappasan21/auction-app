@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import { createClient } from "@libsql/client";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs"
 import { randomUUID } from "crypto";
 
 dotenv.config({ path: ".env.local" });
